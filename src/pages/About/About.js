@@ -1,13 +1,12 @@
 import React from 'react';
-import './About.css';
 
-function About() {
+const About = () => {
   return (
-    <div className="About">
-      <h1>About Us</h1>
-      <p>This is the about page.</p>
+    <div>
+      <h1>About Me</h1>
+      <p>This page contains information about me.</p>
     </div>
   );
-}
+};
 
 export default About;
