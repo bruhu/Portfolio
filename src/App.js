@@ -1,17 +1,27 @@
 import React from 'react';
-import './App.css';
-import Navbar from './components/Navbar/Navbar';
-import Footer from './components/Footer/Footer';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home/Home';
+import About from './pages/About/About';
+import NotFound from './pages/NotFound/NotFound';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <Navbar />
-      <Home />
-      <Footer />
-    </div>
+    <Router>
+      <div>
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+          </ul>
+        </nav>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
