@@ -1,5 +1,6 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Link as ScrollLink } from 'react-scroll';  // Importing scroll link component
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import NotFound from './pages/NotFound/NotFound';
@@ -12,14 +13,14 @@ const App = () => {
         <nav className="bg-blue-600 p-4 fixed top-0 left-0 right-0 z-10 shadow-md">
           <ul className="flex space-x-4 text-white">
             <li>
-              <Link to="#home" className="hover:text-gray-200">
+              <ScrollLink to="home" smooth={true} duration={500} className="hover:text-gray-200">
                 Home
-              </Link>
+              </ScrollLink>
             </li>
             <li>
-              <Link to="#about" className="hover:text-gray-200">
+              <ScrollLink to="about" smooth={true} duration={500} className="hover:text-gray-200">
                 About
-              </Link>
+              </ScrollLink>
             </li>
           </ul>
         </nav>
