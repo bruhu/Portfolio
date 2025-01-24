@@ -7,18 +7,27 @@ import NotFound from './pages/NotFound/NotFound';
 const App = () => {
   return (
     <Router>
-      <div>
-        <nav>
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
+      <div className="min-h-screen bg-gray-100">
+        {/* Navigation */}
+        <nav className="bg-blue-600 p-4 shadow-md">
+          <ul className="flex space-x-4 text-white">
+            <li>
+              <a href="/" className="hover:text-gray-200">Home</a>
+            </li>
+            <li>
+              <a href="/about" className="hover:text-gray-200">About</a>
+            </li>
           </ul>
         </nav>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+
+        {/* Routes */}
+        <div className="p-6">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </div>
       </div>
     </Router>
   );
